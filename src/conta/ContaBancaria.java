@@ -6,7 +6,7 @@ public class ContaBancaria {
 	private String numeroConta;
 	private double saldo;
 
-	public ContaBancaria(String titular, String numeroConta, int saldo) {
+	public ContaBancaria(String titular, String numeroConta, double saldo) {
 
 		this.titular = titular;
 		this.numeroConta = numeroConta;
@@ -34,10 +34,14 @@ public class ContaBancaria {
 		return saldo;
 	}
 
-	public void setSaldo(int saldo) {
+	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 
+	public double depositar (double valor) {
+		return saldo; 
+		
+	}
 	public boolean sacar(double valor) {
 
 	boolean sucesso = (saldo >= valor); 
