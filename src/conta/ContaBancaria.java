@@ -38,21 +38,28 @@ public class ContaBancaria {
 		this.saldo = saldo;
 	}
 
-	public double depositar (double valor) {
-		return saldo; 
-		
+	public void depositar(double valor) {
+		if (valor > 0) {
+
+			saldo += valor;
+			System.out.println("Deposito de R$ " + valor + " realiado com sucesso!");
+		} else {
+			System.out.println("Deposito inválido!");
+		}
+
 	}
+
 	public boolean sacar(double valor) {
 
-	boolean sucesso = (saldo >= valor); 
-	saldo = sucesso ? saldo - valor : saldo; 
-	return sucesso; 
-	
+		boolean sucesso = (saldo >= valor);
+		saldo = sucesso ? saldo - valor : saldo;
+		return sucesso;
+
 	}
 
 	public String toString() {
 
-		return "/nNome: " + this.getTitular() + "/nNumero da COnta: " + this.getNumeroConta() + "/nSaldo: "
+		return "/nNome: " + this.getTitular() + "/nNumero da Conta: " + this.getNumeroConta() + "/nSaldo: "
 				+ this.getSaldo();
 
 	}
